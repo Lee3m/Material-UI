@@ -1,4 +1,5 @@
 import { Stack, Button } from "@mui/material";
+import SendIcon from "@mui/icons-material/Send";
 
 /* 
     variants:
@@ -7,7 +8,7 @@ import { Stack, Button } from "@mui/material";
     outlined - user for secondary action eg go back
 
     --------------------------------------------------------------------------
-    attributes: variants, direction, color
+    attributes: variants, direction, color, size, startIcon, endIcon
  */
 export const MaterialButton = () => {
   return (
@@ -35,6 +36,25 @@ export const MaterialButton = () => {
         </Button>
         <Button color="success" variant="outlined">
           Success
+        </Button>
+      </Stack>
+      <Stack display="block" direction="row" spacing={2}>
+        <Button variant="contained" size="small">
+          Small
+        </Button>
+        <Button variant="contained" size="medium">
+          Medium
+        </Button>
+        <Button variant="contained" size="large">
+          Large
+        </Button>
+      </Stack>
+      <Stack spacing={2} direction="row">
+        <Button variant="contained" startIcon={<SendIcon />}>
+          Send
+        </Button>
+        <Button variant="contained" endIcon={<SendIcon />}>
+          Send
         </Button>
       </Stack>
     </Stack>
