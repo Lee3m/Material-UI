@@ -1,14 +1,17 @@
-import { Stack, Button } from "@mui/material";
+import { Stack, Button, IconButton } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 
-/* 
+/*  BUTTONS / ICONS / ICON BUTTONS 
+
     variants:
     text - use to grabe less attention
     contained - use to grab users attention and primary action eg register
     outlined - user for secondary action eg go back
 
     --------------------------------------------------------------------------
-    attributes: variants, direction, color, size, startIcon, endIcon
+    attributes:
+    variants, direction, color, size, startIcon, 
+    endIcon, disableElevation, disableRipple, onClick
  */
 export const MaterialButton = () => {
   return (
@@ -53,9 +56,12 @@ export const MaterialButton = () => {
         <Button variant="contained" startIcon={<SendIcon />}>
           Send
         </Button>
-        <Button variant="contained" endIcon={<SendIcon />}>
+        <Button variant="contained" endIcon={<SendIcon />} disableElevation>
           Send
         </Button>
+        <IconButton color="success" size="large">
+          <SendIcon />
+        </IconButton>
       </Stack>
     </Stack>
   );
