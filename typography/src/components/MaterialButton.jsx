@@ -1,5 +1,17 @@
-import { Stack, Button, IconButton, ButtonGroup } from "@mui/material";
+import {
+  Stack,
+  Button,
+  IconButton,
+  ButtonGroup,
+  ToggleButtonGroup,
+  ToggleButton,
+} from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
+import FormatBoldIcon from "@mui/icons-material/FormatBold";
+import FormatItalicIcon from "@mui/icons-material/FormatItalic";
+import FormatUnderlinedIcon from "@mui/icons-material/FormatUnderlined";
+
+import { useState, useEffect } from "react";
 
 /*  BUTTONS / ICONS / ICON BUTTONS / BUTTON GROUPS
 
@@ -14,6 +26,16 @@ import SendIcon from "@mui/icons-material/Send";
     endIcon, disableElevation, disableRipple, onClick
  */
 export const MaterialButton = () => {
+  const [format, setFormat] = useState("");
+
+  const handleFormatChange = (e, updatedFormat) => {
+    setFormat(updatedFormat);
+  };
+
+  useEffect(() => {
+    console.log(format);
+  }, [format]);
+
   return (
     <Stack spacing={4}>
       <Stack spacing={2} direction="row">
@@ -81,6 +103,25 @@ export const MaterialButton = () => {
           </Button>
           <Button>Right</Button>
         </ButtonGroup>
+      </Stack>
+      <Stack direction="row">
+        <ToggleButtonGroup
+          color="primary"
+          onChange={handleFormatChange}
+          exclusive
+          value={format}
+          orientation="vertical"
+        >
+          <ToggleButton value="bold" sx={{ color: "white" }}>
+            <FormatBoldIcon />
+          </ToggleButton>
+          <ToggleButton value="italic" sx={{ color: "white" }}>
+            <FormatItalicIcon />
+          </ToggleButton>
+          <ToggleButton value="underlined" sx={{ color: "white" }}>
+            <FormatUnderlinedIcon />
+          </ToggleButton>
+        </ToggleButtonGroup>
       </Stack>
     </Stack>
   );
