@@ -1,7 +1,7 @@
-import { Stack, Button, IconButton } from "@mui/material";
+import { Stack, Button, IconButton, ButtonGroup } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 
-/*  BUTTONS / ICONS / ICON BUTTONS 
+/*  BUTTONS / ICONS / ICON BUTTONS / BUTTON GROUPS
 
     variants:
     text - use to grabe less attention
@@ -62,6 +62,25 @@ export const MaterialButton = () => {
         <IconButton color="success" size="large">
           <SendIcon />
         </IconButton>
+      </Stack>
+      <Stack direction="row">
+        <ButtonGroup
+          variant="contained"
+          color="warning"
+          aria-label="button group"
+          orientation="vertical"
+          size="small"
+        >
+          <Button>Left</Button>
+          <Button
+            onClick={() => {
+              alert("Middle Button Pressed");
+            }}
+          >
+            Middle
+          </Button>
+          <Button>Right</Button>
+        </ButtonGroup>
       </Stack>
     </Stack>
   );
