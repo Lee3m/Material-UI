@@ -1,11 +1,10 @@
-import { MaterialTypography } from "./components/MaterialTypography";
+import { MaterialTextField } from "./components/MaterialTextField";
 import "./App.css";
-import { MaterialButton } from "./components/MaterialButton";
 
 function App() {
   return (
     <>
-      <MaterialButton />
+      <MaterialTextField />
     </>
   );
 }
